@@ -30,7 +30,7 @@ public class LoginManager {
             if(companyFacade.login(email, password)) {
                 return companyFacade;
             }
-            return new CompanyFacade();
+            return null;
         }
         if(clientType == ClientType.CUSTOMER) {
             CustomerFacade customerFacade = new CustomerFacade();
