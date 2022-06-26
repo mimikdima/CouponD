@@ -24,16 +24,16 @@ public class CouponDAOImpl implements CouponDAO{
     private static final String QUERY_GET_COUPONS_COMPANY_BY_CATEGORY = "SELECT * FROM `coupon-bhp-386`.`coupons` WHERE company_id = ? AND category_id = ?;";
     private static final String QUERY_GET_COUPONS_COMPANY_BY_MAX_PRICE = "SELECT * FROM `coupon-bhp-386`.`coupons` WHERE company_id = ? AND price < ?;";
 
-    private static final String QUERY_GET_COUPONS_BY_CUSTOMER = "SELECT c.* FROM `coupon-bhp-386`.`coupons` c" +
-                                                                "LEFT JOIN `coupon-bhp-386`.`customers_vs_coupons` cvc ON c.id = cvc.coupon_id" +
+    private static final String QUERY_GET_COUPONS_BY_CUSTOMER = "SELECT c.* FROM `coupon-bhp-386`.`coupons` c " +
+                                                                "LEFT JOIN `coupon-bhp-386`.`customers_vs_coupons` cvc ON c.id = cvc.coupon_id " +
                                                                 "WHERE cvc.customer_id = ?;";
 
-    private static final String QUERY_GET_COUPONS_CUSTOMER_BY_CATEGORY = "SELECT c.* FROM `coupon-bhp-386`.`coupons` c" +
-                                                                         "LEFT JOIN `coupon-bhp-386`.`customers_vs_coupons` cvc ON c.id = cvc.coupon_id" +
+    private static final String QUERY_GET_COUPONS_CUSTOMER_BY_CATEGORY = "SELECT c.* FROM `coupon-bhp-386`.`coupons` c " +
+                                                                         "LEFT JOIN `coupon-bhp-386`.`customers_vs_coupons` cvc ON c.id = cvc.coupon_id " +
                                                                          "WHERE cvc.customer_id = ? AND c.category_id = ?;";
 
-    private static final String QUERY_GET_COUPONS_CUSTOMER_BY_MAX_PRICE = "SELECT c.* FROM `coupon-bhp-386`.`coupons` c" +
-                                                                           "LEFT JOIN `coupon-bhp-386`.`customers_vs_coupons` cvc ON c.id = cvc.coupon_id" +
+    private static final String QUERY_GET_COUPONS_CUSTOMER_BY_MAX_PRICE = "SELECT c.* FROM `coupon-bhp-386`.`coupons` c " +
+                                                                           "LEFT JOIN `coupon-bhp-386`.`customers_vs_coupons` cvc ON c.id = cvc.coupon_id " +
                                                                            "WHERE cvc.customer_id = ? AND c.price < ?;";
 
     private static final String QUERY_PURCHASE_COUPON = "INSERT INTO `coupon-bhp-386`.`customers_vs_coupons` (`customer_id`, `coupon_id`) VALUES (?, ?)";
